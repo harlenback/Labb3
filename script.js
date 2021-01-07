@@ -27,7 +27,6 @@ function choseUniqueMovie(movieData) {
 function showUniqueMovie(movieData) {
   // Orkar jag förbättra denna?
   let dataTest = JSON.stringify(movieData);
-  console.log(movieData);
 
   divMovie.innerHTML = `
      <img src="${movieData.Poster}" alt="" srcset="">
@@ -75,7 +74,6 @@ searchField.addEventListener(`keyup`, function () {
 });
 
 const movieList = (movieData) => {
-  console.log(movieData);
   if (movieData.Error === "Movie not found!") {
     p.innerHTML = ``;
     list.innerHTML = ``;
@@ -88,8 +86,6 @@ const movieList = (movieData) => {
     list.innerHTML = ``;
 
     for (let i = 0; i < movieData.Search.length; i++) {
-      console.log(movieData.Search[i]);
-
       const newLi = document.createElement(`li`);
       newLi.textContent = `${movieData.Search[i].Title} (${movieData.Search[i].Year})`;
       newLi.setAttribute(
@@ -97,7 +93,6 @@ const movieList = (movieData) => {
         `choseUniqueMovie("${movieData.Search[i].imdbID}")`
       );
       list.appendChild(newLi);
-      console.log(newLi);
     }
   }
 };
