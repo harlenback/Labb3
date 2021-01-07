@@ -35,5 +35,5 @@ li {
 
 li:hover {
   background-color: yellow;
-  border-radius: 50px 0;
+  border-radius: 100px 0;
 }
