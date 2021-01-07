@@ -3,7 +3,8 @@ let searchField = document.getElementById(`searchInput`);
 let results = document.getElementById(`results`);
 let p = document.querySelector(`p`);
 let list = document.querySelector(`ul`);
-let movieDiv = document.getElementById(`movieDiv`);
+let divMovie = document.getElementById(`movieDiv`);
+let divAllInfo = document.getElementById(`allInfo`);
 
 function search(searchType, searchWord) {
   fetch(`http://www.omdbapi.com/?${searchType}=${searchWord}&apikey=${apiKey}`)
@@ -28,7 +29,7 @@ function showUniqueMovie(movieData) {
   let dataTest = JSON.stringify(movieData);
   console.log(movieData);
 
-  movieDiv.innerHTML = `
+  divMovie.innerHTML = `
      <img src="${movieData.Poster}" alt="" srcset="">
      <br>
      <br>
@@ -45,16 +46,27 @@ function showUniqueMovie(movieData) {
      Regissör: ${movieData.Director}<br>
      Handling: ${movieData.Plot}<br>
      Typ: ${movieData.Type} <br>
-     
-     <br><br><br><br><br><br>
-     All info om filmen finns här:
-     ${dataTest}
+  `;
+
+  divAllInfo.innerHTML = `
+  <p>
+  <strong>All info om filmen du precis klickat på finns här: </strong><br>
+
+  ${dataTest}
+  </p>
+
+  <style>#allInfo{
+    border: 5px solid red;
+    padding: 2%;
+    width: 90%;
+    height: 100%;
+}
+</style>
   `;
 }
 
-
-
 searchField.addEventListener(`keyup`, function () {
+  divAllInfo.innerHTML = ``;
   movieDiv.innerHTML = ``;
   if (searchField.value.length > 2) {
     let searchWord = searchField.value;
