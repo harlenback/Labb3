@@ -31,11 +31,9 @@ div {
 li {
   list-style: none;
   padding: 2%;
-
 }
 
 li:hover {
   background-color: yellow;
   border-radius: 50px 0;
-  
 }
