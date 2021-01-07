@@ -70,7 +70,10 @@ searchField.addEventListener(`keyup`, function () {
   if (searchField.value.length > 2) {
     let searchWord = searchField.value;
     search(`s`, searchWord);
-  }
+  } 
+  if (searchField.value.length <= 2){
+    p.innerHTML = ``;
+    list.innerHTML = ``;  }
 });
 
 const movieList = (movieData) => {

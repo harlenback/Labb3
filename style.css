@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 #searchInput {
@@ -17,7 +17,7 @@ section {
 }
 
 p {
-    text-align: left;
+  text-align: left;
 }
 
 div {
@@ -31,4 +31,11 @@ div {
 li {
   list-style: none;
   padding: 2%;
+
+}
+
+li:hover {
+  background-color: yellow;
+  border-radius: 50px 0;
+  
 }
