@@ -26,17 +26,36 @@ function choseUniqueMovie(movieData) {
 function showUniqueMovie(movieData) {
   // Orkar jag förbättra denna?
   let dataTest = JSON.stringify(movieData);
+  console.log(movieData);
 
   movieDiv.innerHTML = `
      <img src="${movieData.Poster}" alt="" srcset="">
      <br>
      <br>
+     <p>
+     Titel: ${movieData.Title}<br>
+     Årtal: ${movieData.Year}<br>
+     Rek ålder: ${movieData.Rated}<br>
+     Releasedatum: ${movieData.Released}<br>
+     Längd: ${movieData.Runtime}<br>
+     Skådespelare: ${movieData.Actors}<br>
+     Priser: ${movieData.Awards}<br>
+     Land: ${movieData.Country}<br>
+     Genre: ${movieData.Genre}<br>
+     Regissör: ${movieData.Director}<br>
+     Handling: ${movieData.Plot}<br>
+     Typ: ${movieData.Type} <br>
+     
+     <br><br><br><br><br><br>
+     All info om filmen finns här:
      ${dataTest}
   `;
 }
 
+
+
 searchField.addEventListener(`keyup`, function () {
-  movieDiv.innerHTML = ``
+  movieDiv.innerHTML = ``;
   if (searchField.value.length > 2) {
     let searchWord = searchField.value;
     search(`s`, searchWord);
